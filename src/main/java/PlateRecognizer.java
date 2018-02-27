@@ -20,7 +20,7 @@ public class PlateRecognizer {
 	static ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
 	public static void main(String[] args) {
 		Alpr alpr = new Alpr("us", "openalpr.conf", "runtime_data");
-		Systen.out.println("Start a new process!");
+		System.out.println("Start a new process!");
 		// Set top N candidates returned to 20
 		//alpr.setTopN(20);
 		while(true) {
