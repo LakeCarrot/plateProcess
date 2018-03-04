@@ -31,7 +31,7 @@ public class PlateRecognizer {
 				long end = System.currentTimeMillis();
 				double currentRate = 50370.0/(end-begin);
 				updateInfo(currentRate);
-				if(end - SessionBegin == 120 * 1000) {
+				if(end - SessionBegin >= 120 * 1000) {
 					System.out.println("Finish this session!");
 					break;
 				}
