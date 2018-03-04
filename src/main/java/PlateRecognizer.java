@@ -43,7 +43,7 @@ public class PlateRecognizer {
 	}
 	private static void updateInfo(double rate) {
 		ManagedChannel mChannel;
-		mChannel = ManagedChannelBuilder.forAddress("172.28.142.176", 50050).usePlaintext(true).build();
+		mChannel = ManagedChannelBuilder.forAddress("34.218.103.6", 50050).usePlaintext(true).build();
 		OffloadingGrpc.OffloadingBlockingStub stub = OffloadingGrpc.newBlockingStub(mChannel);
 		String hostIP = System.getenv("HOSTIP");
 		OffloadingRequest message = OffloadingRequest.newBuilder().setMessage(hostIP + ":" + "plate" + ":" + Double.toString(rate)).build();
