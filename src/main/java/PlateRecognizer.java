@@ -23,6 +23,7 @@ public class PlateRecognizer {
 		System.out.println("Start a new process!");
 		// Set top N candidates returned to 20
 		//alpr.setTopN(20);
+		long SessionBegin = System.currentTimeMillis();
 		while(true) {
 			try {
 				long begin = System.currentTimeMillis();
@@ -30,6 +31,10 @@ public class PlateRecognizer {
 				long end = System.currentTimeMillis();
 				double currentRate = 50370.0/(end-begin);
 				updateInfo(currentRate);
+				if(end - SessionBegin == 120 * 1000) {
+					System.out.println("Finish this session!");
+					break;
+				}
 			} catch(Exception e) {
 				System.out.println("Something wrong!");
 				continue;
