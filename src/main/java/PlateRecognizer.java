@@ -49,7 +49,7 @@ public class PlateRecognizer {
 		mChannel = ManagedChannelBuilder.forAddress("172.28.142.176", 50050).usePlaintext(true).build();
 		OffloadingGrpc.OffloadingBlockingStub stub = OffloadingGrpc.newBlockingStub(mChannel);
 		String hostIP = System.getenv("HOSTIP");
-		OffloadingRequest message = OffloadingRequest.newBuilder().setMessage(hostIP + ":" + sessionID + ":" + "plate" + ":" + Double.toString(rate)).build();
+		OffloadingRequest message = OffloadingRequest.newBuilder().setMessage(hostIP + ":" + "plate" + ":" + Double.toString(rate)).build();
 		OffloadingReply reply = stub.startService(message);
 	}
 }
