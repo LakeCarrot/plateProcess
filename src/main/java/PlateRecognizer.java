@@ -32,10 +32,12 @@ public class PlateRecognizer {
 				long end = System.currentTimeMillis();
 				double currentRate = 50370.0/(end-begin);
 				updateInfo(currentRate, sessionID);
+				/*
 				if(end - SessionBegin >= 800 * 1000) {
 					System.out.println("Finish this session!");
 					break;
 				}
+				*/
 			} catch(Exception e) {
 				System.out.println("Something wrong!");
 				continue;
